@@ -20,17 +20,17 @@ void MainMenu::CreateButtons()
 	std::shared_ptr<Button> playButton = engine->GetUIManager()->CreateButton(sf::Vector2f(width - 50, height), 
 		sf::Vector2f(100, 50), 
 		sf::Color::Green, 
-		"Exit", 
+		"Play", 
 		nullptr,
 		"playButton",
 		[this]()
 		{
-			engine->SetState(EngineState::Quit);
+			engine->SetState(EngineState::Game);
 		});
 	std::shared_ptr<Button> settingsButton = engine->GetUIManager()->CreateButton(sf::Vector2f(width - 50, height + 100), 
 		sf::Vector2f(100, 50), 
 		sf::Color::Yellow, 
-		"Exit", 
+		"Settings", 
 		nullptr,
 		"settingsButton",
 		[this]()
@@ -46,10 +46,10 @@ void MainMenu::CreateButtons()
 					sf::Color::Blue, 
 					nullptr,
 					"settingsMenu");
-				engine->GetUIManager()->CreateButton(sf::Vector2f(settingsMenu->GetSize().x - 55, 5), 
-					sf::Vector2f(50, 50), 
+				engine->GetUIManager()->CreateButton(sf::Vector2f(settingsMenu->GetSize().x - 30, 5), 
+					sf::Vector2f(25, 25), 
 					sf::Color::Red, 
-					"Exit", 
+					"X", 
 					settingsMenu,
 					"settingsMenuButton",
 					[this, settingsMenu]()

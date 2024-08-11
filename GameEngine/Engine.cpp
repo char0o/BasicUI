@@ -6,16 +6,25 @@ Engine::Engine()
 }
 Engine::Engine(int width, int height)
 {
-	this->font.loadFromFile("arial.ttf");
 	this->WindowWidth = width;
 	this->WindowHeight = height;
 	this->window = std::make_shared<sf::RenderWindow>(sf::VideoMode(width, height), "Game Engine");
 	this->window->setFramerateLimit(60);
+
 	State = EngineState::MainMenu;
 	uiManager = std::make_unique<UIManager>();
 }
 Engine::~Engine()
 {
+}
+void Engine::SetState(EngineState state)
+{
+	uiManager->ClearPanels();
+	State = state;
+}
+EngineState Engine::GetState()
+{
+	return State;
 }
 void Engine::Initialize()
 {
@@ -41,22 +50,12 @@ void Engine::Run()
 			uiManager->CheckMouseClick(*window);
 			PollEvents();
 			window->display();
-			//[this, button]()
-			//	{
-			//		std::shared_ptr<BasePanel> parent = button->GetParent();
-			//		std::shared_ptr<BasePanel> current = button;
-			//		while (parent != nullptr)
-			//		{
-			//			current = parent;
-			//			parent = current->GetParent();
-			//		}
-			//		this->RemovePanel(current);
-
-			//	}
 		}
 		else if (State == EngineState::Game)
 		{
+			window->clear(sf::Color(100, 0, 0, 255));
 			PollEvents();
+			window->display();
 		}
 	}
 	window->close();

@@ -13,7 +13,7 @@ public:
 	std::vector<std::shared_ptr<BasePanel>>& GetChildren();
 	void SetId(std::string id) { this->id = id; }
 	std::string GetId() { return id; }
-	void Draw(sf::RenderWindow& window);
+	virtual void Draw(sf::RenderWindow& window);
 	sf::Vector2f GetPos() { return pos; }
 	sf::Vector2f GetSize() { return size; }
 	sf::Color GetColor() { return color; }

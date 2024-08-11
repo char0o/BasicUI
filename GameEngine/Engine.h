@@ -6,6 +6,8 @@
 #include "ui/elements/Button.h"
 #include "ui/elements/BasePanel.h"
 #include "ui/MainMenu.h"
+#include "ui/FontManager.h"
+#include "string"
 class Engine
 {
 public:
@@ -19,14 +21,14 @@ public:
 	void Shutdown();
 	void PollEvents();
 	std::unique_ptr<UIManager>& GetUIManager() { return uiManager; }
-	void SetState(EngineState state) { State = state; }
-	EngineState GetState() { return State; }
+	void SetState(EngineState state);
+	EngineState GetState();
 	int WindowWidth;
 	int WindowHeight;
 private:
-	sf::Font font;
 	EngineState State;
 	sf::RenderWindow Window;
 	std::shared_ptr<sf::RenderWindow> window;
 	std::unique_ptr<UIManager> uiManager;
+
 };

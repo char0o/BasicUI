@@ -85,7 +85,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-main-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\SFML-2.6.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -139,6 +139,8 @@
     <ClCompile Include="ui\elements\Button.cpp" />
     <ClCompile Include="ui\elements\BasePanel.cpp" />
     <ClCompile Include="ui\elements\Menu.cpp" />
+    <ClCompile Include="ui\FontManager.cpp" />
+    <ClCompile Include="ui\FontManager.h" />
     <ClCompile Include="ui\MainMenu.cpp" />
     <ClCompile Include="ui\UIManager.cpp" />
     <ClCompile Include="ui\UIManager.h" />

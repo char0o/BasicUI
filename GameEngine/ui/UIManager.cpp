@@ -10,7 +10,7 @@ UIManager::~UIManager()
 void UIManager::LoadFonts()
 {
 	fontManager.LoadFont("arial", "arial.ttf");
-	fontManager.LoadFont("vinque", "vinque.otf");
+	//fontManager.LoadFont("vinque", "vinque.otf");
 }
 void UIManager::DrawPanels(sf::RenderWindow& window)
 {
@@ -61,7 +61,7 @@ std::shared_ptr<Button> UIManager::CreateButton(
 	std::shared_ptr<Button> button = std::make_shared<Button>();
 	button->Init(pos, size, color, parent, id);
 	button->SetClickCallBack(callback);
-	button->InitText(text, fontManager.GetFont("vinque"), 26, sf::Color::Black);
+	button->InitText(text, fontManager.GetFont("arial"), 26, sf::Color::Black);
 	button->SetId(id);
 	if (parent != nullptr)
 	{

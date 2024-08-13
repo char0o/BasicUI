@@ -11,10 +11,6 @@
 using namespace std;
 void main()
 {
-
 	Engine engine(800, 600);
-	while (engine.GetWindow()->isOpen())
-	{
-		engine.Run();
-	}
+	engine.Run();
 }
